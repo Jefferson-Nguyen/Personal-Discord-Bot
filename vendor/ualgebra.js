@@ -1,4 +1,5 @@
 // From https://github.com/plainas/ualgebra.js/blob/master/ualgebra.js
+// Modified to use module.exports
 
 // The MIT License
 

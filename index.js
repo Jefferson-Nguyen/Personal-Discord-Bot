@@ -11,7 +11,7 @@ client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-// Find all commands
+// Find all commands and add them to client.commands
 for (const file of commandFiles) {
 	const filePath = path.join(commandsPath, file);
 	const command = require(filePath);
@@ -23,6 +23,7 @@ for (const file of commandFiles) {
 	}
 }
 
+// Check and execute commands
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
@@ -45,14 +46,16 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
-// On ready
+// Successful launch
 client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
+// We want to map every user to their own matrices so that they do not interfere with each other
 const matrix1 = new Map();
 const matrix2 = new Map();
 
+// Parse through the input, making sure that the formatting is correct and return a 2D array
 const parseMatrix = (input) => {
 	const data = input.split(/\r?\n/);
 	data.shift();
@@ -68,6 +71,7 @@ const parseMatrix = (input) => {
 	return matrix;
 };
 
+// We add matrices through a '.' command
 client.on('messageCreate', async message => {
 	if (message.author.bot) return;
 	if (message.content.startsWith(`.hello`)) {
