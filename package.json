@@ -1,0 +1,23 @@
+{
+  "name": "personal-discord-bot",
+  "version": "1.0.0",
+  "description": "A personal discord bot",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jefferson-Nguyen/Personal-Discord-Bot.git"
+  },
+  "author": "Jefferson Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jefferson-Nguyen/Personal-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/Jefferson-Nguyen/Personal-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0"
+  }
+}
