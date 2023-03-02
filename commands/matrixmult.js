@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { matrixMultiply } = require('../vendor/ualgebra');
-// const { matrix1, matrix2 } = require('../index.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
